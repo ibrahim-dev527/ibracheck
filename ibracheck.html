@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IbraCheck - Finance & Accounting Quiz</title>
+    <link rel="stylesheet" href="ibracheck.css">
+ 
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+            <div class="logo-placeholder">
+                <h1>IbraCheck</h1>
+                <p>Finance & Accounting Quiz Platform</p>
+            </div>
+            <h2>Master Your Knowledge, One Question at a Time</h2>
+        </header>
+
+        <div class="screen active" id="homeScreen">
+            <div class="welcome-text">
+                <h2>Welcome to IbraCheck!</h2>
+                <p>Select a category to begin your learning journey</p>
+            </div>
+            <div class="category-grid" id="categoryGrid"></div>
+        </div>
+
+        <div class="screen" id="questionSelectionScreen">
+            <div class="question-selection">
+                <h2>How many questions would you like?</h2>
+                <div class="question-options">
+                    <button class="question-option-btn" data-count="10">10 Questions</button>
+                    <button class="question-option-btn" data-count="15">15 Questions</button>
+                    <button class="question-option-btn" data-count="20">20 Questions</button>
+                </div>
+                <button class="back-btn" id="backToHome">← Back</button>
+            </div>
+        </div>
+
+        <div class="screen" id="quizScreen">
+            <div class="quiz-header">
+                <div class="progress-info">
+                    <span id="currentQuestion">1</span> / <span id="totalQuestions">10</span>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="question-card">
+                <div class="question-text" id="questionText"></div>
+                <div class="options-container" id="optionsContainer"></div>
+            </div>
+            <button class="next-btn" id="nextBtn" disabled>Next Question</button>
+        </div>
+
+        <div class="screen" id="resultsScreen">
+            <div class="welcome-text">
+                <h2>Quiz Completed! 🎉</h2>
+            </div>
+            <div class="score-display">
+                <div class="score-number" id="finalScore">0/10</div>
+                <div class="percentage" id="percentageScore">0%</div>
+            </div>
+            <div class="result-message" id="resultMessage"></div>
+            <div class="results-actions">
+                <button class="restart-btn" id="restartBtn">Try Again</button>
+                <button class="home-btn" id="homeBtn">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+   <script src="ibratech.js"></script>
+</body>
+</html>
+
