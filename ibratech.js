@@ -1,5 +1,5 @@
 
-        const quizData = [
+     const quizData = [
             {category:"Islamic Accounting",question:"What is the primary principle that distinguishes Islamic accounting?",options:["Profit maximization","Compliance with Shariah law","Tax minimization","Asset valuation"],correctAnswer:1},
             {category:"Islamic Accounting",question:"In Islamic finance, what is 'Riba'?",options:["Interest or usury","Charitable giving","Profit sharing","Asset leasing"],correctAnswer:0},
             {category:"Islamic Accounting",question:"What is Zakat in Islamic accounting?",options:["Mandatory charitable contribution","Business tax","Profit margin","Investment return"],correctAnswer:0},
