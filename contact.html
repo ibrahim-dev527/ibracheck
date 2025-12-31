@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IbraCheck - Interactive quiz platform for Islamic Accounting, Financial Accounting, and Operations Research">
-    <meta name="keywords" content="accounting quiz, islamic accounting, financial accounting, operations research, EOQ">
+    <meta name="description" content="Contact IbraCheck - Get in touch with us for support, feedback, or inquiries">
     <meta name="theme-color" content="#2c3e50">
-    <title>IbraCheck - Quiz Platform</title>
+    <title>Contact - IbraCheck</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="navigation.css">
 </head>
@@ -25,10 +24,10 @@
             </a>
 
             <ul class="nav-links" role="menubar">
-                <li role="none"><a href="index.html" class="active" role="menuitem">Quiz</a></li>
+                <li role="none"><a href="index.html" role="menuitem">Quiz</a></li>
                 <li role="none"><a href="about.html" role="menuitem">About</a></li>
                 <li role="none"><a href="resources.html" role="menuitem">Resources</a></li>
-                <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                <li role="none"><a href="contact.html" class="active" role="menuitem">Contact</a></li>
             </ul>
 
             <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -42,78 +41,71 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="index.html" class="active">Quiz</a></li>
+            <li><a href="index.html">Quiz</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="resources.html">Resources</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     </div>
     <div class="overlay" id="overlay"></div>
 
-    <!-- MAIN QUIZ CONTAINER -->
-    <div class="quiz-wrapper">
-        <div class="container">
-            <header>
-                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
-                <div class="logo-placeholder">
-                    <h1>IbraCheck</h1>
-                    <p>Finance & Accounting Quiz Platform</p>
-                </div>
-                <h2>Master Your Knowledge, One Question at a Time</h2>
-            </header>
+    <!-- MAIN CONTENT -->
+    <div class="page-container">
+        <div class="page-header">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you!</p>
+        </div>
 
-            <!-- HOME SCREEN -->
-            <div class="screen active" id="homeScreen">
-                <div class="welcome-text">
-                    <h2>Welcome to IbraCheck!</h2>
-                    <p>Select a category to begin your learning journey</p>
+        <div class="content-section">
+            <div class="contact-grid">
+                <div class="contact-form-section">
+                    <h2>Send us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required placeholder="Write your message here..." rows="6"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
-                <div class="category-grid" id="categoryGrid"></div>
-            </div>
 
-            <!-- QUESTION SELECTION SCREEN -->
-            <div class="screen" id="questionSelectionScreen">
-                <div class="question-selection">
-                    <h2>How many questions would you like?</h2>
-                    <div class="question-options">
-                        <button class="question-option-btn" data-count="10">10 Questions</button>
-                        <button class="question-option-btn" data-count="15">15 Questions</button>
-                        <button class="question-option-btn" data-count="20">20 Questions</button>
+                <div class="contact-info-section">
+                    <h2>Contact Information</h2>
+                    <div class="contact-info-card">
+                        <div class="info-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>support@ibracheck.com</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 5px;">We respond within 24 hours</p>
                     </div>
-                    <button class="back-btn" id="backToHome">← Back</button>
-                </div>
-            </div>
-
-            <!-- QUIZ SCREEN -->
-            <div class="screen" id="quizScreen">
-                <div class="quiz-header">
-                    <div class="progress-info">
-                        <span id="currentQuestion">1</span> / <span id="totalQuestions">10</span>
+                    <div class="contact-info-card">
+                        <div class="info-icon">📱</div>
+                        <h3>Phone</h3>
+                        <p>+233 XX XXX XXXX</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 5px;">Mon-Fri, 9AM - 5PM GMT</p>
                     </div>
-                </div>
-                <div class="progress-bar-container">
-                    <div class="progress-bar" id="progressBar"></div>
-                </div>
-                <div class="question-card">
-                    <div class="question-text" id="questionText"></div>
-                    <div class="options-container" id="optionsContainer"></div>
-                </div>
-                <button class="next-btn" id="nextBtn" disabled>Next Question</button>
-            </div>
+                    <div class="contact-info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Accra, Ghana</p>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 5px;">West Africa</p>
+                    </div>
 
-            <!-- RESULTS SCREEN -->
-            <div class="screen" id="resultsScreen">
-                <div class="welcome-text">
-                    <h2>Quiz Completed! 🎉</h2>
-                </div>
-                <div class="score-display">
-                    <div class="score-number" id="finalScore">0/10</div>
-                    <div class="percentage" id="percentageScore">0%</div>
-                </div>
-                <div class="result-message" id="resultMessage"></div>
-                <div class="results-actions">
-                    <button class="restart-btn" id="restartBtn">Try Again</button>
-                    <button class="home-btn" id="homeBtn">Back to Home</button>
+                    <div style="margin-top: 30px; padding: 20px; background: var(--light-bg); border-radius: 10px;">
+                        <h3 style="margin-bottom: 15px;">Quick Support</h3>
+                        <p style="font-size: 0.95rem;">Need immediate help? Try our AI chatbot assistant (💬 button at bottom-right) for instant answers!</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -155,7 +147,7 @@
         </div>
         <div class="chatbot-messages" id="chatbotMessages">
             <div class="bot-message">
-                <p>Hi! 👋 I'm your IbraCheck assistant. How can I help you today?</p>
+                <p>Hi! 👋 How can I help you?</p>
             </div>
         </div>
         <div class="chatbot-input">
@@ -165,16 +157,12 @@
     </div>
     <button class="chatbot-toggle" id="chatbotToggle">💬</button>
 
-    <!-- JavaScript Files -->
-    <script src="script.js"></script>
     <script src="chatbot.js"></script>
     <script>
-        // Page loader
         window.addEventListener('load', () => {
             document.getElementById('pageLoader').classList.add('hidden');
         });
 
-        // Hamburger menu functionality
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         const overlay = document.getElementById('overlay');
@@ -191,6 +179,15 @@
             hamburger.setAttribute('aria-expanded', 'false');
             mobileMenu.classList.remove('active');
             overlay.classList.remove('active');
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            alert(`Thank you, ${name}! Your message has been received. We'll respond to ${email} shortly.`);
+            e.target.reset();
         });
     </script>
 </body>

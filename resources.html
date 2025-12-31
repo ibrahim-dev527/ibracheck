@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - IbraCheck</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navigation.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>IbraCheck</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Quiz</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resources.html" class="active">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="page-container">
+        <div class="page-header">
+            <h1>Learning Resources</h1>
+            <p>Curated resources to enhance your learning journey</p>
+        </div>
+
+        <div class="content-section">
+            <div class="resource-category">
+                <h2>📖 Islamic Accounting</h2>
+                <ul class="resource-list">
+                    <li><a href="https://aaoifi.com" target="_blank">AAOIFI - Accounting Standards</a></li>
+                    <li><a href="https://ifsb.org" target="_blank">Islamic Financial Services Board</a></li>
+                    <li><a href="https://www.islamicfinance.com" target="_blank">Islamic Finance Portal</a></li>
+                </ul>
+            </div>
+
+            <div class="resource-category">
+                <h2>💼 Financial Accounting</h2>
+                <ul class="resource-list">
+                    <li><a href="https://www.ifrs.org" target="_blank">IFRS Foundation</a></li>
+                    <li><a href="https://www.fasb.org" target="_blank">FASB Standards</a></li>
+                    <li><a href="https://www.accountingtools.com" target="_blank">Accounting Tools</a></li>
+                </ul>
+            </div>
+
+            <div class="resource-category">
+                <h2>📊 Operations Research</h2>
+                <ul class="resource-list">
+                    <li><a href="https://www.informs.org" target="_blank">INFORMS</a></li>
+                    <li><a href="#" target="_blank">EOQ Model Calculator</a></li>
+                    <li><a href="#" target="_blank">Inventory Management Guide</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>IbraCheck</h3>
+                <p>Your trusted platform for finance and accounting learning</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Quiz</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: support@ibracheck.com</p>
+                <p>Phone: +233 XX XXX XXXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 IbraCheck. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            <h4>IbraCheck Assistant</h4>
+            <button class="chatbot-close" id="chatbotClose">✕</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="bot-message">
+                <p>Hi! 👋 How can I help you?</p>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Type your message...">
+            <button id="chatbotSend">Send</button>
+        </div>
+    </div>
+    <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+
+    <script src="chatbot.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

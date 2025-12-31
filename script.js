@@ -29,7 +29,67 @@
             {category:"Advanced Financial Accounting",question:"Currency translation rate for assets:",options:["Historical rate","Current exchange rate","Average rate","Fixed rate"],correctAnswer:1},
             {category:"Advanced Financial Accounting",question:"Derivative derives value from:",options:["Company reputation","Historical performance","Management decisions","Underlying asset/rate/index"],correctAnswer:3},
             {category:"Advanced Financial Accounting",question:"Cash flow hedge protects against:",options:["Fair value changes","Credit risk","Cash flow variability","Operational inefficiency"],correctAnswer:2},
-            {category:"Advanced Financial Accounting",question:"Push-down accounting involves:",options:["Reducing values","Adjusting subsidiary books","Eliminating debt","Deferring revenue"],correctAnswer:1}
+            {category:"Advanced Financial Accounting",question:"Push-down accounting involves:",options:["Reducing values","Adjusting subsidiary books","Eliminating debt","Deferring revenue"],correctAnswer:1},
+
+{category:"Operations Research",question:"What is the primary goal of inventory control?",options:["Maximize storage space","Balance ordering costs with holding costs","Eliminate all stockouts","Increase product prices"],correctAnswer:1},
+
+{category:"Operations Research",question:"Economic Order Quantity (EOQ) minimizes which costs?",options:["Production and marketing costs","Transportation and packaging costs","Labor and overhead costs","Total inventory costs (ordering + holding)"],correctAnswer:3},
+
+{category:"Operations Research",question:"In the basic EOQ model, what happens when order quantity doubles?",options:["Ordering cost doubles","Holding cost doubles","Total cost doubles","Shortage cost doubles"],correctAnswer:1},
+
+{category:"Operations Research",question:"What does 'lead time' mean in inventory management?",options:["Time to manufacture a product","Time between placing and receiving an order","Time products stay in storage","Time to sell inventory"],correctAnswer:1},
+
+{category:"Operations Research",question:"Which factor is NOT typically considered in basic EOQ calculation?",options:["Annual demand","Ordering cost per order","Product quality ratings","Holding cost per unit per year"],correctAnswer:2},
+
+{category:"Operations Research",question:"Gradual replenishment (EPL) is used when:",options:["Products are received all at once","Products are produced and consumed simultaneously","Demand is uncertain","Orders are always backordered"],correctAnswer:1},
+
+{category:"Operations Research",question:"In EOQ with gradual replenishment, the maximum inventory level is:",options:["Equal to order quantity","Greater than order quantity","Less than order quantity","Zero"],correctAnswer:2},
+
+{category:"Operations Research",question:"What is a 'stockout' in inventory management?",options:["Excess inventory disposal","Damaged goods","Ordering too much inventory","Running out of inventory to meet demand"],correctAnswer:3},
+
+{category:"Operations Research",question:"When stockouts are permitted in EOQ, what additional cost is considered?",options:["Marketing cost","Packaging cost","Quality control cost","Shortage or backorder cost"],correctAnswer:3},
+
+{category:"Operations Research",question:"In EOQ models with planned shortages, the optimal policy involves:",options:["Never running out of stock","Intentionally allowing some shortages to reduce costs","Always maintaining maximum inventory","Eliminating ordering costs"],correctAnswer:1},
+
+{category:"Operations Research",question:"Quantity discounts affect EOQ by:",options:["Potentially changing the optimal order quantity","Eliminating ordering cost","Increasing holding costs only","Having no effect on order decisions"],correctAnswer:0},
+
+{category:"Operations Research",question:"When evaluating quantity discounts, you should:",options:["Always choose the largest discount","Compare total costs at different price breaks","Only consider the unit price","Ignore holding costs"],correctAnswer:1},
+
+{category:"Operations Research",question:"What is a 'price break' in quantity discount models?",options:["A quantity level where unit price changes","When prices increase suddenly","A discount for damaged goods","A seasonal price reduction"],correctAnswer:0},
+
+{category:"Operations Research",question:"The reorder point in inventory systems is:",options:["When inventory reaches maximum level","Inventory level that triggers a new order","When demand increases","When suppliers offer discounts"],correctAnswer:1},
+
+{category:"Operations Research",question:"Re-order levels are set based on:",options:["Random selection","Lead time demand and desired service level","Supplier preferences","Only storage capacity"],correctAnswer:2},
+
+{category:"Operations Research",question:"Under conditions of certainty, the reorder point equals:",options:["Zero inventory","Safety stock only","Maximum inventory level","Demand during lead time"],correctAnswer:3},
+
+{category:"Operations Research",question:"What is the purpose of safety stock?",options:["To increase storage costs","To protect against demand or lead time uncertainty","To maximize profits","To reduce product quality"],correctAnswer:1},
+
+{category:"Operations Research",question:"Safety stock levels are influenced by:",options:["Only product color","Demand variability and desired service level","Marketing budget","Number of employees"],correctAnswer:1},
+
+{category:"Operations Research",question:"Higher service levels require:",options:["Higher safety stock","Lower safety stock","No safety stock","Constant inventory"],correctAnswer:0},
+
+{category:"Operations Research",question:"Statistical methods for safety stock calculation typically use:",options:["Guesswork","Standard deviation of demand and z-scores","Only historical averages","Supplier recommendations only"],correctAnswer:1},
+
+{category:"Operations Research",question:"If demand variability increases, safety stock should:",options:["Decrease","Stay the same","Increase","Be eliminated"],correctAnswer:2},
+
+{category:"Operations Research",question:"The normal distribution is commonly used in safety stock calculations to model:",options:["Employee productivity","Demand uncertainty","Product color preferences","Supplier reliability"],correctAnswer:3},
+
+{category:"Operations Research",question:"Inventory control with sensitivity analysis examines:",options:["Only one scenario","How changes in parameters affect optimal decisions","Employee satisfaction","Marketing effectiveness"],correctAnswer:1},
+
+{category:"Operations Research",question:"Sensitivity analysis in EOQ helps identify:",options:["Customer preferences","Which parameters have the greatest impact on total cost","Employee schedules","Product colors"],correctAnswer:1},
+
+{category:"Operations Research",question:"If holding cost increases by 20%, the EOQ will:",options:["Decrease (but not by 20%)","Increase by 20%","Remain unchanged","Double"],correctAnswer:0},
+
+{category:"Operations Research",question:"A robust inventory policy is one that:",options:["Performs well across different scenarios","Only works in one situation","Ignores cost changes","Maximizes inventory levels always"],correctAnswer:0},
+
+{category:"Operations Research",question:"In EOQ formula, if annual demand quadruples, the optimal order quantity will:",options:["Quadruple","Double","Remain the same","Halve"],correctAnswer:1},
+
+{category:"Operations Research",question:"The ratio of ordering cost to holding cost affects:",options:["Product quality","The optimal order frequency and quantity","Customer satisfaction only","Supplier selection only"],correctAnswer:1},
+
+{category:"Operations Research",question:"When conducting sensitivity analysis on reorder points, you examine:",options:["Only storage space","Impact of changes in lead time and demand variability","Employee preferences","Product packaging"],correctAnswer:1},
+
+{category:"Operations Research",question:"Total relevant cost in EOQ includes:",options:["Purchase cost only","Marketing cost only","Ordering cost plus holding cost","All company expenses"],correctAnswer:2}
         ];
 
         let currentCategory='',currentQuestionCount=10,currentQuestionIndex=0,score=0,quizQuestions=[],selectedAnswer=null;
