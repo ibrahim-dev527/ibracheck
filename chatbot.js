@@ -104,7 +104,7 @@ function generateResponse(userMessage) {
     
     // Contact & Support
     if (msg.includes('contact') || msg.includes('support') || msg.includes('help desk')) {
-        return "📞 Need help? Contact us:\n📧 support@ibracheck.com\n📱 +233 XX XXX XXXX\n📍 Accra, Ghana\n\nOr visit our Contact page to send a message!";
+        return "📞 Need help? Contact us:\n📧  lotsuibrahim2@gmail.com\n📱 +233 54 482 3484\n📍 Accra, Ghana\n\nOr visit our Contact page to send a message!";
     }
     
     if (msg.includes('feedback') || msg.includes('suggest') || msg.includes('improve')) {
@@ -140,9 +140,15 @@ function generateResponse(userMessage) {
         return "Don't give up! 💪 Every expert was once a beginner. Keep practicing with our quizzes, review the resources, and you'll master it! You've got this! 🌟";
     }
     
-    if (msg.includes('motivate') || msg.includes('encourage')) {
+    if (msg.includes('motivate') || msg.includes('encourage') || msg.includes('motivational')) {
         return "Remember: Success is the sum of small efforts repeated day in and day out! 🌟 You're already taking the right steps by using IbraCheck. Keep going! 💪📚";
     }
+
+    //About me.
+    if (msg.includes('class') || msg.includes('department') || msg.includes('faculty'))  {
+        return "I'm in the faculty of business (Accounting Department). Just contact me on 0544823484 for further details. You've got this.💪📚";
+    }
+
     
     // Fun/casual
     if (msg.includes('joke')) {
@@ -150,7 +156,7 @@ function generateResponse(userMessage) {
     }
     
     if (msg.includes('who are you') || msg.includes('what are you')) {
-        return "I'm IbraCheck Assistant! 🤖 I'm here 24/7 to help you navigate our platform, answer questions about quizzes, and support your learning journey! 📚✨";
+        return "I'm Ibrahim's Assistant! 🤖 I'm here 24/7 to help you navigate our platform, answer questions about quizzes, and support your learning journey! 📚✨";
     }
     
     // Default response
