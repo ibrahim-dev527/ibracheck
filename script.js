@@ -1,6 +1,5 @@
 // ===================================
-// IBRACHECK - COMPLETE JAVASCRIPT
-// Quiz App + Contact Form with Formspree
+// IBRACHECK - QUIZ APPLICATION
 // ===================================
 
 // Page Loader
@@ -35,85 +34,27 @@ if (hamburger && mobileMenu && overlay) {
 }
 
 // ===================================
-// CONTACT FORM - FORMSPREE INTEGRATION
+// QUIZ DATA
 // ===================================
-const contactForm = document.getElementById('contactForm');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Get form values
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const subject = document.getElementById('subject').value.trim();
-        const message = document.getElementById('message').value.trim();
-        
-        // Basic validation
-        if (!name || !email || !subject || !message) {
-            alert('Please fill in all required fields');
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address');
-            return;
-        }
-        
-        // Get submit button and store original text
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.textContent;
-        
-        // Disable button and show loading state
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.style.opacity = '0.7';
-        
-        try {
-            // Get form data
-            const formData = new FormData(contactForm);
-            
-            // Submit to Formspree
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
-            if (response.ok) {
-                // Success!
-                alert(`Thank you, ${name}! 🎉\n\nYour message has been sent successfully.\n\nWe'll respond to ${email} within 24 hours.`);
-                contactForm.reset();
-            } else {
-                // Handle error response
-                const data = await response.json();
-                if (data.errors) {
-                    alert('Oops! There were some errors:\n' + data.errors.map(error => error.message).join('\n'));
-                } else {
-                    alert('Oops! There was a problem submitting your form. Please try again.');
-                }
-            }
-        } catch (error) {
-            // Network error
-            alert('Oops! There was a problem submitting your form. Please check your internet connection and try again.');
-            console.error('Form submission error:', error);
-        } finally {
-            // Re-enable button and restore original text
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
-            submitBtn.style.opacity = '1';
-        }
-    });
-}
+// ============================================================
+// TO ADD MORE QUESTIONS:
+// 1. Copy the structure below
+// 2. Update the category name (must match existing category)
+// 3. Add your question, options, and correctAnswer index (0-3)
+// 4. The correctAnswer is the index of the correct option (0 = first option, 1 = second, etc.)
+// 
+// Example:
+// {
+//     category: "Islamic Accounting",
+//     question: "Your question here?",
+//     options: ["Option A", "Option B", "Option C", "Option D"],
+//     correctAnswer: 2  // This means "Option C" is correct (index starts at 0)
+// }
+// ============================================================
 
-// ===================================
-// QUIZ APPLICATION
-// ===================================
 const quizData = [
+    // ISLAMIC ACCOUNTING QUESTIONS
     {category:"Islamic Accounting",question:"What is the primary principle that distinguishes Islamic accounting?",options:["Profit maximization","Compliance with Shariah law","Tax minimization","Asset valuation"],correctAnswer:1},
     {category:"Islamic Accounting",question:"In Islamic finance, what is 'Riba'?",options:["Interest or usury","Charitable giving","Profit sharing","Asset leasing"],correctAnswer:0},
     {category:"Islamic Accounting",question:"What is Zakat in Islamic accounting?",options:["Mandatory charitable contribution","Business tax","Profit margin","Investment return"],correctAnswer:0},
@@ -134,6 +75,8 @@ const quizData = [
     {category:"Islamic Accounting",question:"Rate of Zakat on business assets:",options:["1.5%","2.5%","5%","10%"],correctAnswer:1},
     {category:"Islamic Accounting",question:"Standard governing Islamic institutions:",options:["AAOIFI","GAAP only","SEC regulations","Local tax code"],correctAnswer:0},
     {category:"Islamic Accounting",question:"Wealth accumulation is permissible when:",options:["Earned ethically and shared","Done by any means","Hidden from authorities","Only for personal benefit"],correctAnswer:0},
+
+    // ADVANCED FINANCIAL ACCOUNTING QUESTIONS
     {category:"Advanced Financial Accounting",question:"What is consolidation?",options:["Combining parent and subsidiary statements","Combining assets","Reducing debt","Merging accounts"],correctAnswer:0},
     {category:"Advanced Financial Accounting",question:"Goodwill arises when:",options:["Company makes profit","Purchase price exceeds fair value","Assets depreciate","Liabilities increase"],correctAnswer:1},
     {category:"Advanced Financial Accounting",question:"Method for significant influence:",options:["Cost method","Equity method","Fair value method","Historical cost"],correctAnswer:1},
@@ -144,6 +87,8 @@ const quizData = [
     {category:"Advanced Financial Accounting",question:"Derivative derives value from:",options:["Company reputation","Historical performance","Management decisions","Underlying asset/rate/index"],correctAnswer:3},
     {category:"Advanced Financial Accounting",question:"Cash flow hedge protects against:",options:["Fair value changes","Credit risk","Cash flow variability","Operational inefficiency"],correctAnswer:2},
     {category:"Advanced Financial Accounting",question:"Push-down accounting involves:",options:["Reducing values","Adjusting subsidiary books","Eliminating debt","Deferring revenue"],correctAnswer:1},
+
+    // OPERATIONS RESEARCH QUESTIONS
     {category:"Operations Research",question:"What is the primary goal of inventory control?",options:["Maximize storage space","Balance ordering costs with holding costs","Eliminate all stockouts","Increase product prices"],correctAnswer:1},
     {category:"Operations Research",question:"Economic Order Quantity (EOQ) minimizes which costs?",options:["Production and marketing costs","Transportation and packaging costs","Labor and overhead costs","Total inventory costs (ordering + holding)"],correctAnswer:3},
     {category:"Operations Research",question:"In the basic EOQ model, what happens when order quantity doubles?",options:["Ordering cost doubles","Holding cost doubles","Total cost doubles","Shortage cost doubles"],correctAnswer:1},
@@ -173,9 +118,102 @@ const quizData = [
     {category:"Operations Research",question:"In EOQ formula, if annual demand quadruples, the optimal order quantity will:",options:["Quadruple","Double","Remain the same","Halve"],correctAnswer:1},
     {category:"Operations Research",question:"The ratio of ordering cost to holding cost affects:",options:["Product quality","The optimal order frequency and quantity","Customer satisfaction only","Supplier selection only"],correctAnswer:1},
     {category:"Operations Research",question:"When conducting sensitivity analysis on reorder points, you examine:",options:["Only storage space","Impact of changes in lead time and demand variability","Employee preferences","Product packaging"],correctAnswer:1},
-    {category:"Operations Research",question:"Total relevant cost in EOQ includes:",options:["Purchase cost only","Marketing cost only","Ordering cost plus holding cost","All company expenses"],correctAnswer:2}
+    {category:"Operations Research",question:"Total relevant cost in EOQ includes:",options:["Purchase cost only","Marketing cost only","Ordering cost plus holding cost","All company expenses"],correctAnswer:2},
+
+    // MICRO ECONOMICS QUESTIONS
+    {category:"Micro Economics",question:"What is the law of demand?",options:["Price and quantity demanded move in same direction","Price and quantity demanded move in opposite directions","Price remains constant","Quantity is always fixed"],correctAnswer:1},
+    {category:"Micro Economics",question:"What causes a shift in the demand curve?",options:["Change in price of the good itself","Change in income or preferences","Movement along the curve","Government intervention only"],correctAnswer:1},
+    {category:"Micro Economics",question:"Perfect competition is characterized by:",options:["One dominant firm","Few large firms","Many small firms with identical products","Differentiated products"],correctAnswer:2},
+    {category:"Micro Economics",question:"What is price elasticity of demand?",options:["Total revenue divided by price","Percentage change in quantity demanded / percentage change in price","Change in supply","Fixed pricing strategy"],correctAnswer:1},
+    {category:"Micro Economics",question:"Consumer surplus represents:",options:["Government tax revenue","Producer profit","Difference between willingness to pay and actual price paid","Total market value"],correctAnswer:2},
+
+    // ACCOUNTING INFORMATION SYSTEM QUESTIONS
+    {category:"Accounting Information System",question:"What is the primary purpose of an AIS?",options:["Marketing products","Collecting, storing, and processing financial data","Managing employees","Designing products"],correctAnswer:1},
+    {category:"Accounting Information System",question:"Which cycle involves customer sales and cash receipts?",options:["Expenditure cycle","Production cycle","Revenue cycle","Financing cycle"],correctAnswer:2},
+    {category:"Accounting Information System",question:"Internal controls in AIS are designed to:",options:["Increase sales","Ensure accuracy and prevent fraud","Reduce employee count","Eliminate all risks"],correctAnswer:1},
+    {category:"Accounting Information System",question:"What does ERP stand for?",options:["Enterprise Resource Planning","Electronic Revenue Processing","External Reporting Program","Economic Risk Planning"],correctAnswer:0},
+    {category:"Accounting Information System",question:"Segregation of duties helps prevent:",options:["Employee collaboration","Efficient workflow","Fraud and errors","System updates"],correctAnswer:2},
+
+    // STRATEGIC MANAGEMENT QUESTIONS
+    {category:"Strategic Management",question:"SWOT analysis examines:",options:["Only internal factors","Only external factors","Strengths, Weaknesses, Opportunities, Threats","Financial ratios only"],correctAnswer:2},
+    {category:"Strategic Management",question:"Porter's Five Forces framework analyzes:",options:["Employee satisfaction","Industry competitive structure","Product quality","Marketing effectiveness"],correctAnswer:1},
+    {category:"Strategic Management",question:"What is a competitive advantage?",options:["Having more employees","Superior performance vs. competitors","Larger office space","Higher advertising budget"],correctAnswer:1},
+    {category:"Strategic Management",question:"Cost leadership strategy focuses on:",options:["Premium pricing","Being the lowest cost producer","Product differentiation","Niche marketing"],correctAnswer:1},
+    {category:"Strategic Management",question:"The balanced scorecard measures performance across:",options:["Financial metrics only","Customer satisfaction only","Financial, customer, internal, learning perspectives","Revenue only"],correctAnswer:2},
+
+    // COMPANY AND PARTNERSHIP LAW QUESTIONS
+    {category:"Company and Partnership Law",question:"A limited liability company means:",options:["Unlimited personal liability","Shareholders' liability limited to investment","Company cannot be sued","No legal obligations"],correctAnswer:1},
+    {category:"Company and Partnership Law",question:"What is a partnership?",options:["Single person business","Association of two or more persons in business","Government entity","Charitable organization"],correctAnswer:1},
+    {category:"Company and Partnership Law",question:"In a general partnership, partners have:",options:["No liability","Limited liability","Unlimited joint and several liability","Government protection"],correctAnswer:2},
+    {category:"Company and Partnership Law",question:"A company's articles of association contain:",options:["Employee contracts","Internal management rules and regulations","Tax returns","Marketing plans"],correctAnswer:1},
+    {category:"Company and Partnership Law",question:"Directors owe fiduciary duties to:",options:["Themselves only","The company and shareholders","Competitors","Government only"],correctAnswer:1},
+
+    // COST ACCOUNTING QUESTIONS
+    {category:"Cost Accounting",question:"Variable costs:",options:["Remain constant in total","Change with production volume","Are always zero","Never change"],correctAnswer:1},
+    {category:"Cost Accounting",question:"What is absorption costing?",options:["Ignoring overhead","Allocating all manufacturing costs to products","Only direct costs","Marketing costs only"],correctAnswer:1},
+    {category:"Cost Accounting",question:"Break-even point is where:",options:["Profit is maximized","Total revenue equals total costs","Costs are minimized","Sales are highest"],correctAnswer:1},
+    {category:"Cost Accounting",question:"Standard costing involves:",options:["Using historical costs only","Setting predetermined costs for comparison","Ignoring variances","Random cost allocation"],correctAnswer:1},
+    {category:"Cost Accounting",question:"Job order costing is appropriate when:",options:["Products are identical","Products are customized","Mass production","Services only"],correctAnswer:1},
+
+    // AUDIT AND INTERNAL REVIEW QUESTIONS
+    {category:"Audit and Internal Review",question:"The primary objective of an audit is to:",options:["Find all fraud","Express opinion on financial statement fairness","Prepare financial statements","Manage company operations"],correctAnswer:1},
+    {category:"Audit and Internal Review",question:"Audit evidence should be:",options:["Expensive","Sufficient and appropriate","Minimal","Ignored"],correctAnswer:1},
+    {category:"Audit and Internal Review",question:"Independence means the auditor:",options:["Works for the company","Is free from conflicts of interest","Ignores management","Never communicates"],correctAnswer:1},
+    {category:"Audit and Internal Review",question:"Internal audit focuses on:",options:["External reporting only","Improving operations and controls","Marketing","Product development"],correctAnswer:1},
+    {category:"Audit and Internal Review",question:"Audit risk is the risk that:",options:["Company fails","Auditor issues wrong opinion","Employees quit","Sales decline"],correctAnswer:1},
+
+    // ============================================================
+    // TO ADD A NEW CATEGORY:
+    // 1. Add questions with a new category name (copy the format above)
+    // 2. The category will automatically appear on the homepage
+    // 3. Update the category icons in the categoryIcons object below
+    // 4. Update the category descriptions in the categoryDescriptions object below
+    // 
+    // Example of adding "Cost Accounting" category:
+    // {category:"Cost Accounting",question:"What is absorption costing?",options:["Option 1","Option 2","Option 3","Option 4"],correctAnswer:0},
+    // ============================================================
 ];
 
+// ============================================================
+// CATEGORY CUSTOMIZATION
+// ============================================================
+
+// Category Icons Mapping
+// TO CUSTOMIZE CATEGORY ICONS: Add your category name as the key and choose an emoji icon
+const categoryIcons = {
+    "Islamic Accounting": "🕌",
+    "Advanced Financial Accounting": "💼",
+    "Operations Research": "📊",
+    "Micro Economics": "📈",
+    "Accounting Information System": "💻",
+    "Strategic Management": "🎯",
+    "Company and Partnership Law": "⚖️",
+    "Cost Accounting": "💰",
+    "Audit and Internal Review": "🔍"
+    // Add more categories here:
+    // "Taxation": "📋",
+    // "Management Accounting": "📊"
+};
+
+// Category Descriptions
+// TO ADD DESCRIPTIONS FOR CATEGORIES: Add your category name and a brief description
+const categoryDescriptions = {
+    "Islamic Accounting": "Master Shariah-compliant accounting principles and Islamic financial instruments",
+    "Advanced Financial Accounting": "Deep dive into consolidation, mergers, and complex accounting standards",
+    "Operations Research": "Understand inventory management, EOQ models, and optimization techniques",
+    "Micro Economics": "Learn demand, supply, market structures, and consumer behavior",
+    "Accounting Information System": "Explore data processing, internal controls, and ERP systems",
+    "Strategic Management": "Study competitive analysis, SWOT, Porter's Forces, and strategy formulation",
+    "Company and Partnership Law": "Understand corporate governance, partnership structures, and legal compliance",
+    "Cost Accounting": "Master cost behavior, absorption costing, and managerial decision-making",
+    "Audit and Internal Review": "Learn audit procedures, evidence gathering, and internal control evaluation"
+    // Add more descriptions here:
+    // "Taxation": "Explore tax laws, compliance, and planning strategies"
+};
+
+// ===================================
+// APPLICATION STATE
+// ===================================
 let currentCategory = '';
 let currentQuestionCount = 10;
 let currentQuestionIndex = 0;
@@ -183,17 +221,13 @@ let score = 0;
 let quizQuestions = [];
 let selectedAnswer = null;
 
-const screens = {
-    home: document.getElementById('homeScreen'),
-    questionSelection: document.getElementById('questionSelectionScreen'),
-    quiz: document.getElementById('quizScreen'),
-    results: document.getElementById('resultsScreen')
-};
-
+// DOM Elements
 const el = {
     categoryGrid: document.getElementById('categoryGrid'),
-    themeToggle: document.getElementById('themeToggle'),
-    backToHome: document.getElementById('backToHome'),
+    questionSelectionScreen: document.getElementById('questionSelectionScreen'),
+    closeSelection: document.getElementById('closeSelection'),
+    quizScreen: document.getElementById('quizScreen'),
+    resultsScreen: document.getElementById('resultsScreen'),
     questionText: document.getElementById('questionText'),
     optionsContainer: document.getElementById('optionsContainer'),
     nextBtn: document.getElementById('nextBtn'),
@@ -204,41 +238,68 @@ const el = {
     percentageScore: document.getElementById('percentageScore'),
     resultMessage: document.getElementById('resultMessage'),
     restartBtn: document.getElementById('restartBtn'),
-    homeBtn: document.getElementById('homeBtn')
+    homeBtn: document.getElementById('homeBtn'),
+    quitQuiz: document.getElementById('quitQuiz'),
+    scoreCircle: document.getElementById('scoreCircle')
 };
 
+// ===================================
+// INITIALIZE APP
+// ===================================
 function init() {
     // Only initialize quiz if elements exist
     if (!el.categoryGrid) return;
     
-    const cats = [...new Set(quizData.map(q => q.category))];
-    cats.forEach(cat => {
+    // Get unique categories from quiz data
+    const categories = [...new Set(quizData.map(q => q.category))];
+    
+    // Create category cards
+    categories.forEach(cat => {
         const count = quizData.filter(q => q.category === cat).length;
+        const icon = categoryIcons[cat] || "📚"; // Default icon if not specified
+        const description = categoryDescriptions[cat] || "Test your knowledge with comprehensive questions";
+        
         const card = document.createElement('div');
-        card.className = 'category-card';
-        card.innerHTML = `<h3>${cat}</h3><p>${count} questions</p>`;
+        card.className = 'category-card-modern';
+        card.innerHTML = `
+            <div class="category-icon">${icon}</div>
+            <h3>${cat}</h3>
+            <p>${description}</p>
+            <div class="category-meta">
+                <span class="question-count">${count} Questions Available</span>
+                <div class="start-arrow">→</div>
+            </div>
+        `;
+        
         card.onclick = () => {
             currentCategory = cat;
-            showScreen('questionSelection');
+            showQuestionSelection();
         };
+        
         el.categoryGrid.appendChild(card);
     });
     
-    if (el.themeToggle) {
-        el.themeToggle.onclick = () => {
-            document.body.classList.toggle('dark-mode');
-            el.themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-        };
+    // Update total questions stat in hero
+    const totalQuestionsEl = document.getElementById('totalQuestions');
+    if (totalQuestionsEl) {
+        totalQuestionsEl.textContent = quizData.length + '+';
     }
     
-    if (el.backToHome) {
-        el.backToHome.onclick = () => showScreen('home');
+    // Setup event listeners
+    setupEventListeners();
+}
+
+// ===================================
+// EVENT LISTENERS
+// ===================================
+function setupEventListeners() {
+    if (el.closeSelection) {
+        el.closeSelection.onclick = hideQuestionSelection;
     }
     
     document.querySelectorAll('.question-option-btn').forEach(btn => {
         btn.onclick = (e) => {
-            currentQuestionCount = parseInt(e.target.dataset.count);
+            currentQuestionCount = parseInt(e.currentTarget.dataset.count);
             startQuiz();
         };
     });
@@ -248,43 +309,95 @@ function init() {
     }
     
     if (el.restartBtn) {
-        el.restartBtn.onclick = startQuiz;
+        el.restartBtn.onclick = () => {
+            hideResults();
+            startQuiz();
+        };
     }
     
     if (el.homeBtn) {
         el.homeBtn.onclick = () => {
-            showScreen('home');
+            hideResults();
             currentQuestionIndex = 0;
             score = 0;
         };
     }
-}
-
-function showScreen(name) {
-    Object.values(screens).forEach(s => {
-        if (s) s.classList.remove('active');
-    });
-    if (screens[name]) {
-        screens[name].classList.add('active');
+    
+    if (el.quitQuiz) {
+        el.quitQuiz.onclick = () => {
+            if (confirm('Are you sure you want to quit? Your progress will be lost.')) {
+                hideQuiz();
+                currentQuestionIndex = 0;
+                score = 0;
+            }
+        };
     }
 }
 
+// ===================================
+// SCREEN MANAGEMENT
+// ===================================
+function showQuestionSelection() {
+    el.questionSelectionScreen.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function hideQuestionSelection() {
+    el.questionSelectionScreen.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+function showQuiz() {
+    el.quizScreen.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function hideQuiz() {
+    el.quizScreen.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+function showResults() {
+    el.resultsScreen.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    animateScoreCircle();
+}
+
+function hideResults() {
+    el.resultsScreen.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// ===================================
+// QUIZ LOGIC
+// ===================================
 function startQuiz() {
-    quizQuestions = shuffleArray(quizData.filter(q => q.category === currentCategory)).slice(0, currentQuestionCount);
+    hideQuestionSelection();
+    
+    // Get questions for selected category
+    const categoryQuestions = quizData.filter(q => q.category === currentCategory);
+    
+    // Shuffle and select questions
+    quizQuestions = shuffleArray(categoryQuestions).slice(0, currentQuestionCount);
+    
     currentQuestionIndex = 0;
     score = 0;
     selectedAnswer = null;
+    
     el.totalQuestions.textContent = quizQuestions.length;
-    showScreen('quiz');
+    
+    showQuiz();
     loadQuestion();
 }
 
 function loadQuestion() {
     const q = quizQuestions[currentQuestionIndex];
+    
     el.currentQuestion.textContent = currentQuestionIndex + 1;
     el.progressBar.style.width = ((currentQuestionIndex + 1) / quizQuestions.length * 100) + '%';
     el.questionText.textContent = q.question;
     el.optionsContainer.innerHTML = '';
+    
     q.options.forEach((opt, i) => {
         const div = document.createElement('div');
         div.className = 'option';
@@ -292,16 +405,22 @@ function loadQuestion() {
         div.onclick = () => selectOption(i, div);
         el.optionsContainer.appendChild(div);
     });
+    
     el.nextBtn.disabled = true;
     selectedAnswer = null;
 }
 
 function selectOption(idx, optEl) {
-    if (selectedAnswer !== null) return;
+    if (selectedAnswer !== null) return; // Already answered
+    
     selectedAnswer = idx;
     const q = quizQuestions[currentQuestionIndex];
     const opts = el.optionsContainer.querySelectorAll('.option');
+    
+    // Disable all options
     opts.forEach(o => o.classList.add('disabled'));
+    
+    // Show correct/incorrect
     if (idx === q.correctAnswer) {
         optEl.classList.add('correct');
         score++;
@@ -309,34 +428,61 @@ function selectOption(idx, optEl) {
         optEl.classList.add('incorrect');
         opts[q.correctAnswer].classList.add('correct');
     }
+    
     el.nextBtn.disabled = false;
 }
 
 function nextQuestion() {
     currentQuestionIndex++;
+    
     if (currentQuestionIndex < quizQuestions.length) {
         loadQuestion();
     } else {
-        showResults();
+        finishQuiz();
     }
 }
 
-function showResults() {
+function finishQuiz() {
+    hideQuiz();
+    
     const pct = Math.round((score / quizQuestions.length) * 100);
+    
     el.finalScore.textContent = `${score}/${quizQuestions.length}`;
     el.percentageScore.textContent = `${pct}%`;
+    
     const passed = pct >= 70;
     el.resultMessage.className = `result-message ${passed ? 'pass' : 'fail'}`;
-    el.resultMessage.textContent = passed ? '🎉 Excellent! You passed!' : '📚 Keep studying! Try again.';
+    el.resultMessage.textContent = passed 
+        ? '🎉 Excellent! You passed!' 
+        : '📚 Keep studying! Try again to improve.';
+    
+    // Save to localStorage
     localStorage.setItem('lastScore', JSON.stringify({
         category: currentCategory,
         score,
         total: quizQuestions.length,
-        percentage: pct
+        percentage: pct,
+        date: new Date().toISOString()
     }));
-    showScreen('results');
+    
+    showResults();
 }
 
+function animateScoreCircle() {
+    const pct = Math.round((score / quizQuestions.length) * 100);
+    const circumference = 2 * Math.PI * 90; // radius = 90
+    const offset = circumference - (pct / 100) * circumference;
+    
+    // Animate the circle
+    setTimeout(() => {
+        el.scoreCircle.style.strokeDashoffset = offset;
+        el.scoreCircle.style.transition = 'stroke-dashoffset 1.5s ease-out';
+    }, 100);
+}
+
+// ===================================
+// UTILITY FUNCTIONS
+// ===================================
 function shuffleArray(arr) {
     const a = [...arr];
     for (let i = a.length - 1; i > 0; i--) {
@@ -346,13 +492,7 @@ function shuffleArray(arr) {
     return a;
 }
 
-// Load theme preference
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    if (el.themeToggle) {
-        el.themeToggle.textContent = '☀️';
-    }
-}
-
-// Initialize quiz app
+// ===================================
+// START APP
+// ===================================
 init();

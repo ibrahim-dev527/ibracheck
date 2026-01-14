@@ -7,7 +7,10 @@
     <meta name="theme-color" content="#2c3e50">
     <title>About - IbraCheck</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="navigation.css">
+    
+    <link rel="stylesheet" href="about.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Page Loader -->
@@ -24,8 +27,9 @@
             </a>
 
             <ul class="nav-links" role="menubar">
-                <li role="none"><a href="index.html" role="menuitem">Quiz</a></li>
-                <li role="none"><a href="about.html" class="active" role="menuitem">About</a></li>
+                <li role="none"><a href="index.html" class="active" role="menuitem">Home</a></li>
+                <li role="none"><a href="#quiz-section" role="menuitem">Quiz</a></li>
+                <li role="none"><a href="about.html" role="menuitem">About</a></li>
                 <li role="none"><a href="resources.html" role="menuitem">Resources</a></li>
                 <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
             </ul>
@@ -41,83 +45,321 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="index.html">Quiz</a></li>
-            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#quiz-section">Quiz</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
     <div class="overlay" id="overlay"></div>
-
-    <!-- MAIN CONTENT -->
-    <div class="page-container">
-        <div class="page-header">
-            <h1>About IbraCheck</h1>
-            <p>Your trusted partner in finance and accounting education</p>
-        </div>
-
-        <div class="content-section">
-            <h2>Our Mission</h2>
-            <p>
-                IbraCheck is dedicated to providing high-quality, interactive learning experiences for finance 
-                and accounting students. We believe that education should be engaging, accessible, and effective. 
-                Our platform combines cutting-edge technology with expertly crafted content to help students 
-                master complex concepts through practice and repetition.
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content-about">
+            <div class="hero-badge animate-fade-in">
+                <span>📖</span>
+                <span>About Us</span>
+            </div>
+            <h1 class="hero-title-about animate-slide-up">
+                Empowering Students Through
+                <span class="gradient-text">Quality Education</span>
+            </h1>
+            <p class="hero-description-about animate-slide-up-delay">
+                Discover the story behind IbraCheck and our mission to revolutionize 
+                finance and accounting education for students worldwide
             </p>
-            
-            <h2 style="margin-top: 40px;">What We Offer</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Focused Learning</h3>
-                    <p>Targeted quizzes covering specific topics in Islamic Accounting, Financial Accounting, and Operations Research</p>
+        </div>
+        <div class="floating-elements">
+            <div class="float-element element-1">📚</div>
+            <div class="float-element element-2">🎓</div>
+            <div class="float-element element-3">✨</div>
+            <div class="float-element element-4">💡</div>
+        </div>
+    </section>
+
+    <!-- FOUNDER SECTION -->
+    <section class="founder-section">
+        <div class="container-wide">
+            <div class="founder-grid">
+                <div class="founder-image-container animate-slide-left">
+                    <div class="image-frame">
+                        <!-- ============================================
+                             TO ADD YOUR IMAGE:
+                             Replace the src below with your image path
+                             Example: src="images/your-photo.jpg"
+                             ============================================ -->
+                        <img src="WhatsApp Image 2026-02-06 at 7.54.26 PM.jpeg" 
+                             alt="Founder Ibrahim Lotsu" 
+                             class="founder-img">
+                        <div class="image-decoration"></div>
+                    </div>
+                    <div class="founder-badge">
+                        <span class="badge-icon">👨‍🎓</span>
+                        <div>
+                            <div class="badge-title">Founder & Creator</div>
+                            <div class="badge-subtitle">Est. 2025</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Instant Feedback</h3>
-                    <p>Get immediate results after each quiz with detailed performance metrics and pass/fail status</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Mobile Friendly</h3>
-                    <p>Study anywhere, anytime on any device - desktop, tablet, or smartphone</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Track Progress</h3>
-                    <p>Monitor your improvement over time with saved scores and performance history</p>
+                
+                <div class="founder-content animate-slide-right">
+                    <div class="section-label">Meet the Founder</div>
+                    <h2 class="section-title-large">Ibrahim Mohammed Lotsu</h2>
+                    <div class="founder-role">Accounting Student & Education Innovator</div>
+                    
+                    <p class="founder-bio">
+                        Hi! I'm Ibrahim Mohammed Lotsu, a passionate accounting student in the Faculty of Business, 
+                        Accounting Department. I created IbraCheck out of a desire to help fellow students 
+                        master complex accounting concepts through interactive, engaging learning experiences.
+                    </p>
+                    
+                    <p class="founder-bio">
+                        Throughout my academic journey, I noticed that traditional study methods weren't 
+                        always effective for everyone. That's when I decided to combine technology with 
+                        education to create a platform that makes learning finance and accounting both 
+                        fun and effective.
+                    </p>
+
+                    <div class="founder-stats">
+                        <div class="stat-box">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Subjects Covered</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">📝</div>
+                            <div class="stat-number">60+</div>
+                            <div class="stat-label">Questions Created</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">⭐</div>
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Free Access</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-buttons">
+                        <a href="tel:+233544823484" class="btn-contact">
+                            <span>📞</span>
+                            <span>Call Me</span>
+                        </a>
+                        <a href="mailto:lotsuibrahim2@gmail.com" class="btn-contact secondary">
+                            <span>✉️</span>
+                            <span>Email Me</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-
-            <h2 style="margin-top: 40px;">Our Categories</h2>
-            <ul class="category-list">
-                <li><strong>Islamic Accounting (20 questions):</strong> Master Shariah-compliant accounting principles including Zakat, Riba, Mudarabah, Sukuk, and AAOIFI standards</li>
-                <li><strong>Advanced Financial Accounting (10 questions):</strong> Deep dive into consolidation, goodwill, non-controlling interest, derivatives, and complex accounting topics</li>
-                <li><strong>Operations Research (30 questions):</strong> Understand inventory control systems, EOQ models, safety stock calculations, and sensitivity analysis</li>
-            </ul>
-
-            <h2 style="margin-top: 40px;">Why Choose IbraCheck?</h2>
-            <p>
-                Unlike passive learning methods, IbraCheck uses interactive quizzes to reinforce knowledge through 
-                active recall. Research shows that testing yourself is one of the most effective learning strategies. 
-                Our platform provides:
-            </p>
-            <ul class="category-list">
-                <li>Randomized questions for varied practice</li>
-                <li>Immediate correct/incorrect feedback</li>
-                <li>70% passing threshold to ensure mastery</li>
-                <li>Dark mode for comfortable studying</li>
-                <li>Responsive design for all devices</li>
-                <li>AI-powered chatbot assistant</li>
-            </ul>
-
-            <p style="margin-top: 30px;">
-                Whether you're preparing for exams, reinforcing classroom learning, or pursuing professional 
-                certifications, IbraCheck is your comprehensive study companion. Join thousands of students 
-                who are mastering finance and accounting with IbraCheck!
-            </p>
         </div>
-    </div>
+    </section>
+
+    <!-- MISSION & VISION SECTION -->
+    <section class="mission-vision-section">
+        <div class="container-wide">
+            <div class="mv-grid">
+                <div class="mv-card animate-fade-in">
+                    <div class="mv-icon mission-icon">🎯</div>
+                    <h3>Our Mission</h3>
+                    <p>
+                        To provide high-quality, interactive learning experiences that make finance 
+                        and accounting education accessible, engaging, and effective for students 
+                        everywhere. We believe that education should be both challenging and enjoyable.
+                    </p>
+                    <div class="mv-decoration"></div>
+                </div>
+                
+                <div class="mv-card animate-fade-in-delay">
+                    <div class="mv-icon vision-icon">🔭</div>
+                    <h3>Our Vision</h3>
+                    <p>
+                        To become the leading interactive learning platform for finance and accounting 
+                        students across Ghana and beyond, empowering the next generation of financial 
+                        professionals through innovative technology and quality content.
+                    </p>
+                    <div class="mv-decoration"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT WE OFFER SECTION -->
+    <section class="offer-section">
+        <div class="container-wide">
+            <div class="section-header-center animate-fade-in">
+                <div class="section-label">What We Provide</div>
+                <h2 class="section-title-large">Comprehensive Learning Tools</h2>
+                <p class="section-subtitle">
+                    Everything you need to excel in your accounting and finance studies
+                </p>
+            </div>
+
+            <div class="offer-grid">
+                <div class="offer-card animate-scale">
+                    <div class="offer-number">01</div>
+                    <div class="offer-icon">🕌</div>
+                    <h3>Islamic Accounting</h3>
+                    <p>
+                        Master Shariah-compliant accounting principles including Zakat, Riba, 
+                        Mudarabah, Sukuk, Takaful, and AAOIFI standards with 20 comprehensive questions.
+                    </p>
+                    <ul class="offer-features">
+                        <li>✓ Shariah compliance principles</li>
+                        <li>✓ Islamic financial instruments</li>
+                        <li>✓ Halal business practices</li>
+                    </ul>
+                </div>
+
+                <div class="offer-card animate-scale-delay-1">
+                    <div class="offer-number">02</div>
+                    <div class="offer-icon">💼</div>
+                    <h3>Advanced Financial Accounting</h3>
+                    <p>
+                        Deep dive into consolidation, goodwill calculation, non-controlling interest, 
+                        derivatives, foreign currency translation, and complex accounting standards.
+                    </p>
+                    <ul class="offer-features">
+                        <li>✓ Consolidation methods</li>
+                        <li>✓ Mergers & acquisitions</li>
+                        <li>✓ International standards</li>
+                    </ul>
+                </div>
+
+                <div class="offer-card animate-scale-delay-2">
+                    <div class="offer-number">03</div>
+                    <div class="offer-icon">📊</div>
+                    <h3>Operations Research</h3>
+                    <p>
+                        Understand inventory management, EOQ models, safety stock calculations, 
+                        reorder points, and sensitivity analysis with 30 practical questions.
+                    </p>
+                    <ul class="offer-features">
+                        <li>✓ EOQ optimization</li>
+                        <li>✓ Inventory control systems</li>
+                        <li>✓ Decision analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SHOWCASE -->
+    <section class="features-showcase">
+        <div class="container-wide">
+            <div class="showcase-grid">
+                <div class="showcase-item animate-slide-left">
+                    <div class="showcase-icon">⚡</div>
+                    <h3>Instant Feedback</h3>
+                    <p>Get immediate results after each question with correct answers highlighted</p>
+                </div>
+                <div class="showcase-item animate-slide-left-delay">
+                    <div class="showcase-icon">🎨</div>
+                    <h3>Beautiful Interface</h3>
+                    <p>Modern, intuitive design that makes studying enjoyable</p>
+                </div>
+                <div class="showcase-item animate-slide-right">
+                    <div class="showcase-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Study on any device - desktop, tablet, or smartphone</p>
+                </div>
+                <div class="showcase-item animate-slide-right-delay">
+                    <div class="showcase-icon">📈</div>
+                    <h3>Track Progress</h3>
+                    <p>Monitor your improvement with saved scores and history</p>
+                </div>
+                <div class="showcase-item animate-slide-left">
+                    <div class="showcase-icon">🎯</div>
+                    <h3>Focused Learning</h3>
+                    <p>Choose 10, 15, or 20 questions based on your schedule</p>
+                </div>
+                <div class="showcase-item animate-slide-right">
+                    <div class="showcase-icon">🆓</div>
+                    <h3>Always Free</h3>
+                    <p>100% free access to all features - no hidden costs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY IBRACHECK SECTION -->
+    <section class="why-section">
+        <div class="container-wide">
+            <div class="why-grid">
+                <div class="why-content animate-slide-left">
+                    <div class="section-label">Why Choose Us</div>
+                    <h2 class="section-title-large">Why IbraCheck?</h2>
+                    
+                    <div class="why-list">
+                        <div class="why-item">
+                            <div class="why-number">1</div>
+                            <div class="why-text">
+                                <h4>Active Recall Learning</h4>
+                                <p>Research shows testing yourself is one of the most effective learning strategies</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-item">
+                            <div class="why-number">2</div>
+                            <div class="why-text">
+                                <h4>Randomized Questions</h4>
+                                <p>Each quiz session presents questions in a different order for better retention</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-item">
+                            <div class="why-number">3</div>
+                            <div class="why-text">
+                                <h4>Clear Pass Threshold</h4>
+                                <p>70% passing requirement ensures you've truly mastered the material</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-item">
+                            <div class="why-number">4</div>
+                            <div class="why-text">
+                                <h4>Student-Built</h4>
+                                <p>Created by a student, for students - we understand your challenges</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="index.html#quiz-section" class="btn-start-learning">
+                        <span>Start Learning Now</span>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+
+                <div class="why-visual animate-slide-right">
+                    <div class="visual-box box-1"></div>
+                    <div class="visual-box box-2"></div>
+                    <div class="visual-box box-3"></div>
+                    <div class="stats-overlay">
+                        <div class="stat-item-visual">
+                            <div class="stat-number-visual">60+</div>
+                            <div class="stat-label-visual">Questions</div>
+                        </div>
+                        <div class="stat-item-visual">
+                            <div class="stat-number-visual">3</div>
+                            <div class="stat-label-visual">Categories</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section-about">
+        <div class="cta-content-about animate-zoom-in">
+            <h2>Ready to Transform Your Learning?</h2>
+            <p>Join students mastering finance and accounting with IbraCheck</p>
+            <div class="cta-buttons">
+                <a href="index.html#quiz-section" class="btn-cta-primary">Take Your First Quiz</a>
+                <a href="contact.html" class="btn-cta-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -129,7 +371,7 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Quiz</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="resources.html">Resources</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -143,7 +385,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 IbraCheck. All Rights Reserved.</p>
+            <p>&copy; 2026 IbraCheck. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -187,6 +429,25 @@
             hamburger.setAttribute('aria-expanded', 'false');
             mobileMenu.classList.remove('active');
             overlay.classList.remove('active');
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('[class*="animate-"]').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>

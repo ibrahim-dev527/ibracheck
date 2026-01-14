@@ -6,9 +6,12 @@
     <meta name="description" content="IbraCheck - Interactive quiz platform for Islamic Accounting, Financial Accounting, and Operations Research">
     <meta name="keywords" content="accounting quiz, islamic accounting, financial accounting, operations research, EOQ">
     <meta name="theme-color" content="#2c3e50">
-    <title>IbraCheck - Quiz Platform</title>
+    <title>IbraCheck - Master Finance & Accounting</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="home.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Page Loader -->
@@ -25,7 +28,8 @@
             </a>
 
             <ul class="nav-links" role="menubar">
-                <li role="none"><a href="index.html" class="active" role="menuitem">Quiz</a></li>
+                <li role="none"><a href="index.html" class="active" role="menuitem">Home</a></li>
+                <li role="none"><a href="#quiz-section" role="menuitem">Quiz</a></li>
                 <li role="none"><a href="about.html" role="menuitem">About</a></li>
                 <li role="none"><a href="resources.html" role="menuitem">Resources</a></li>
                 <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
@@ -42,7 +46,8 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="index.html" class="active">Quiz</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#quiz-section">Quiz</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -50,74 +55,233 @@
     </div>
     <div class="overlay" id="overlay"></div>
 
-    <!-- MAIN QUIZ CONTAINER -->
-    <div class="quiz-wrapper">
-        <div class="container">
-            <header>
-                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
-                <div class="logo-placeholder">
-                    <h1>IbraCheck</h1>
-                    <p>Finance & Accounting Quiz Platform</p>
-                </div>
-                <h2>Master Your Knowledge, One Question at a Time</h2>
-            </header>
-
-            <!-- HOME SCREEN -->
-            <div class="screen active" id="homeScreen">
-                <div class="welcome-text">
-                    <h2>Welcome to IbraCheck!</h2>
-                    <p>Select a category to begin your learning journey</p>
-                </div>
-                <div class="category-grid" id="categoryGrid"></div>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>🎓</span>
+                <span>Interactive Learning Platform</span>
             </div>
+            <h1 class="hero-title">
+                Master Finance &<br>
+                <span class="gradient-text">Accounting Excellence</span>
+            </h1>
+            <p class="hero-description">
+                Transform your understanding through interactive quizzes designed for 
+                Islamic Accounting, Advanced Financial Accounting, and Operations Research
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalQuestions">60+</div>
+                    <div class="stat-label">Questions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free</div>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#quiz-section" class="btn-primary">Start Learning</a>
+                <a href="about.html" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        <div class="scroll-indicator" onclick="document.querySelector('#quiz-section').scrollIntoView({behavior: 'smooth'})">
+            <span>Scroll Down</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
 
-            <!-- QUESTION SELECTION SCREEN -->
-            <div class="screen" id="questionSelectionScreen">
-                <div class="question-selection">
-                    <h2>How many questions would you like?</h2>
-                    <div class="question-options">
-                        <button class="question-option-btn" data-count="10">10 Questions</button>
-                        <button class="question-option-btn" data-count="15">15 Questions</button>
-                        <button class="question-option-btn" data-count="20">20 Questions</button>
+    <!-- FEATURES SECTION -->
+    <section class="features-section">
+        <div class="container-wide">
+            <div class="section-header">
+                <span class="section-badge">Why Choose Us</span>
+                <h2 class="section-title">Learn Smarter, Not Harder</h2>
+                <p class="section-description">
+                    Experience the most effective way to master complex accounting concepts
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"></path>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+                        </svg>
                     </div>
-                    <button class="back-btn" id="backToHome">← Back</button>
+                    <h3>Instant Feedback</h3>
+                    <p>Get immediate results with detailed explanations for every question</p>
                 </div>
-            </div>
 
-            <!-- QUIZ SCREEN -->
-            <div class="screen" id="quizScreen">
-                <div class="quiz-header">
-                    <div class="progress-info">
-                        <span id="currentQuestion">1</span> / <span id="totalQuestions">10</span>
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
                     </div>
+                    <h3>Flexible Learning</h3>
+                    <p>Choose 10, 15, or 20 questions per session to match your schedule</p>
                 </div>
-                <div class="progress-bar-container">
-                    <div class="progress-bar" id="progressBar"></div>
-                </div>
-                <div class="question-card">
-                    <div class="question-text" id="questionText"></div>
-                    <div class="options-container" id="optionsContainer"></div>
-                </div>
-                <button class="next-btn" id="nextBtn" disabled>Next Question</button>
-            </div>
 
-            <!-- RESULTS SCREEN -->
-            <div class="screen" id="resultsScreen">
-                <div class="welcome-text">
-                    <h2>Quiz Completed! 🎉</h2>
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <h3>Track Progress</h3>
+                    <p>Monitor your improvement with saved scores and performance history</p>
                 </div>
-                <div class="score-display">
-                    <div class="score-number" id="finalScore">0/10</div>
-                    <div class="percentage" id="percentageScore">0%</div>
-                </div>
-                <div class="result-message" id="resultMessage"></div>
-                <div class="results-actions">
-                    <button class="restart-btn" id="restartBtn">Try Again</button>
-                    <button class="home-btn" id="homeBtn">Back to Home</button>
+
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                            <path d="M3 9h18M9 21V9"></path>
+                        </svg>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Study anywhere, anytime on any device with responsive design</p>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- QUIZ CATEGORIES SECTION -->
+    <section class="quiz-section" id="quiz-section">
+        <div class="container-wide">
+            <div class="section-header">
+                <span class="section-badge">Start Your Journey</span>
+                <h2 class="section-title">Choose Your Category</h2>
+                <p class="section-description">
+                    Select a subject area and test your knowledge with our comprehensive quizzes
+                </p>
+            </div>
+
+            <!-- QUESTION SELECTION SCREEN (Hidden Initially) -->
+            <div class="question-selection-overlay" id="questionSelectionScreen">
+                <div class="question-selection-card">
+                    <button class="close-selection" id="closeSelection">✕</button>
+                    <h2>How many questions?</h2>
+                    <p>Choose your quiz length</p>
+                    <div class="question-options">
+                        <button class="question-option-btn" data-count="10">
+                            <span class="option-number">10</span>
+                            <span class="option-label">Questions</span>
+                            <span class="option-time">~10 mins</span>
+                        </button>
+                        <button class="question-option-btn" data-count="15">
+                            <span class="option-number">15</span>
+                            <span class="option-label">Questions</span>
+                            <span class="option-time">~15 mins</span>
+                        </button>
+                        <button class="question-option-btn" data-count="20">
+                            <span class="option-number">20</span>
+                            <span class="option-label">Questions</span>
+                            <span class="option-time">~20 mins</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Cards - Dynamic Content -->
+            <div class="category-grid-modern" id="categoryGrid">
+                <!-- Categories will be dynamically inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- QUIZ SCREEN (Full Screen Overlay) -->
+    <div class="quiz-overlay" id="quizScreen">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <div class="quiz-logo">
+                    <span class="logo-icon">📚</span>
+                    <span>IbraCheck</span>
+                </div>
+                <div class="progress-info">
+                    <span id="currentQuestion">1</span> / <span id="totalQuestions">10</span>
+                </div>
+                <button class="quit-quiz" id="quitQuiz" title="Exit Quiz">✕</button>
+            </div>
+            
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            
+            <div class="question-card">
+                <div class="question-text" id="questionText"></div>
+                <div class="options-container" id="optionsContainer"></div>
+            </div>
+            
+            <button class="next-btn" id="nextBtn" disabled>
+                <span>Next Question</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
     </div>
+
+    <!-- RESULTS SCREEN (Full Screen Overlay) -->
+    <div class="results-overlay" id="resultsScreen">
+        <div class="results-container">
+            <div class="results-header">
+                <h2>Quiz Completed! 🎉</h2>
+            </div>
+            
+            <div class="score-display">
+                <div class="score-circle">
+                    <svg viewBox="0 0 200 200">
+                        <circle cx="100" cy="100" r="90" stroke="#e0e0e0" stroke-width="10" fill="none"></circle>
+                        <circle id="scoreCircle" cx="100" cy="100" r="90" stroke="url(#scoreGradient)" stroke-width="10" fill="none" 
+                                stroke-dasharray="565" stroke-dashoffset="565" stroke-linecap="round"></circle>
+                        <defs>
+                            <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="score-content">
+                        <div class="percentage" id="percentageScore">0%</div>
+                        <div class="score-number" id="finalScore">0/10</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-message" id="resultMessage"></div>
+            
+            <div class="results-actions">
+                <button class="btn-primary" id="restartBtn">Try Again</button>
+                <button class="btn-secondary" id="homeBtn">Back to Categories</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Excel in Your Studies?</h2>
+            <p>Join thousands of students mastering finance and accounting with IbraCheck</p>
+            <a href="#quiz-section" class="btn-cta">Start Your First Quiz</a>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -129,7 +293,7 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Quiz</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="resources.html">Resources</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -143,7 +307,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 IbraCheck. All Rights Reserved.</p>
+            <p>&copy; 2026 IbraCheck. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -174,6 +338,31 @@
             document.getElementById('pageLoader').classList.add('hidden');
         });
 
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.remove('transparent');
+            } else {
+                navbar.classList.add('transparent');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile menu if open
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    overlay.classList.remove('active');
+                }
+            });
+        });
+
         // Hamburger menu functionality
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -192,6 +381,24 @@
             mobileMenu.classList.remove('active');
             overlay.classList.remove('active');
         });
+
+        // Animate stats on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const animateStats = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(animateStats, observerOptions);
+        document.querySelectorAll('.stat-item').forEach(stat => observer.observe(stat));
     </script>
 </body>
 </html>
