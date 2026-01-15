@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources - IbraCheck</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navigation.css">
     <link rel="stylesheet" href="resources.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-spinner"></div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -15,22 +23,24 @@
                 <span>IbraCheck</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html">Quiz</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#quiz-section">Quiz</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="resources.html" class="active">Resources</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="index.html">Quiz</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#quiz-section">Quiz</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="resources.html" class="active">Resources</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -40,35 +50,119 @@
 
     <div class="page-container">
         <div class="page-header">
+            <div class="page-header-icon">📖</div>
             <h1>Learning Resources</h1>
-            <p>Curated resources to enhance your learning journey</p>
+            <p>Curated resources to enhance your learning journey across all categories</p>
         </div>
 
         <div class="content-section">
             <div class="resource-category">
-                <h2>📖 Islamic Accounting</h2>
+                <h2>🕌 Islamic Accounting</h2>
                 <ul class="resource-list">
-                    <li><a href="https://aaoifi.com" target="_blank">AAOIFI - Accounting Standards</a></li>
+                    <li><a href="https://aaoifi.com" target="_blank">AAOIFI - Accounting & Auditing Standards</a></li>
                     <li><a href="https://ifsb.org" target="_blank">Islamic Financial Services Board</a></li>
                     <li><a href="https://www.islamicfinance.com" target="_blank">Islamic Finance Portal</a></li>
+                    <li><a href="https://www.irti.org" target="_blank">Islamic Research & Training Institute (IRTI)</a></li>
+                    <li><a href="https://www.isra.my" target="_blank">ISRA - International Shari'ah Research Academy</a></li>
                 </ul>
             </div>
 
             <div class="resource-category">
-                <h2>💼 Financial Accounting</h2>
+                <h2>💼 Advanced Financial Accounting</h2>
                 <ul class="resource-list">
-                    <li><a href="https://www.ifrs.org" target="_blank">IFRS Foundation</a></li>
-                    <li><a href="https://www.fasb.org" target="_blank">FASB Standards</a></li>
-                    <li><a href="https://www.accountingtools.com" target="_blank">Accounting Tools</a></li>
+                    <li><a href="https://www.ifrs.org" target="_blank">IFRS Foundation - International Standards</a></li>
+                    <li><a href="https://www.fasb.org" target="_blank">FASB - Financial Accounting Standards</a></li>
+                    <li><a href="https://www.accountingtools.com" target="_blank">Accounting Tools - Tutorials & Guides</a></li>
+                    <li><a href="https://www.iasplus.com" target="_blank">IAS Plus - Deloitte IFRS Resource</a></li>
+                    <li><a href="https://www.pwc.com/gx/en/services/audit-assurance/ifrs-reporting.html" target="_blank">PwC IFRS & Reporting Resources</a></li>
                 </ul>
             </div>
 
             <div class="resource-category">
                 <h2>📊 Operations Research</h2>
                 <ul class="resource-list">
-                    <li><a href="https://www.informs.org" target="_blank">INFORMS</a></li>
-                    <li><a href="#" target="_blank">EOQ Model Calculator</a></li>
-                    <li><a href="#" target="_blank">Inventory Management Guide</a></li>
+                    <li><a href="https://www.informs.org" target="_blank">INFORMS - Institute for Operations Research</a></li>
+                    <li><a href="https://www.investopedia.com/terms/e/economic-order-quantity.asp" target="_blank">EOQ Model Complete Guide</a></li>
+                    <li><a href="https://www.supplychain247.com" target="_blank">Supply Chain Management Resources</a></li>
+                    <li><a href="https://www.mit.edu/~dimitrib/home.html" target="_blank">MIT Operations Research Center</a></li>
+                    <li><a href="https://pubsonline.informs.org" target="_blank">INFORMS Journal Publications</a></li>
+                </ul>
+            </div>
+
+            <div class="resource-category">
+                <h2>📈 Micro Economics</h2>
+                <ul class="resource-list">
+                    <li><a href="https://www.khanacademy.org/economics-finance-domain/microeconomics" target="_blank">Khan Academy - Microeconomics</a></li>
+                    <li><a href="https://www.investopedia.com/microeconomics-4689747" target="_blank">Investopedia - Microeconomics Guide</a></li>
+                    <li><a href="https://www.econlib.org" target="_blank">Library of Economics and Liberty</a></li>
+                    <li><a href="https://ocw.mit.edu/courses/economics/" target="_blank">MIT OpenCourseWare - Economics</a></li>
+                    <li><a href="https://www.aeaweb.org" target="_blank">American Economic Association</a></li>
+                </ul>
+            </div>
+
+            <div class="resource-category">
+                <h2>💻 Accounting Information System</h2>
+                <ul class="resource-list">
+                    <li><a href="https://www.sap.com/products/erp.html" target="_blank">SAP ERP Systems & Solutions</a></li>
+                    <li><a href="https://www.oracle.com/applications/" target="_blank">Oracle Business Applications</a></li>
+                    <li><a href="https://www.aicpa.org" target="_blank">AICPA - AIS Resources & Standards</a></li>
+                    <li><a href="https://www.microsoft.com/en-us/dynamics-365" target="_blank">Microsoft Dynamics 365</a></li>
+                    <li><a href="https://www.acfe.com" target="_blank">Association of Certified Fraud Examiners</a></li>
+                </ul>
+            </div>
+
+            <div class="resource-category">
+                <h2>🎯 Strategic Management</h2>
+                <ul class="resource-list">
+                    <li><a href="https://hbr.org" target="_blank">Harvard Business Review</a></li>
+                    <li><a href="https://www.mckinsey.com/business-functions/strategy-and-corporate-finance" target="_blank">McKinsey Strategy & Corporate Finance</a></li>
+                    <li><a href="https://www.balancedscorecard.org" target="_blank">Balanced Scorecard Institute</a></li>
+                    <li><a href="https://www.bcg.com/publications" target="_blank">Boston Consulting Group Insights</a></li>
+                    <li><a href="https://www.bain.com/insights/" target="_blank">Bain & Company Publications</a></li>
+                </ul>
+            </div>
+
+            <div class="resource-category">
+                <h2>⚖️ Company and Partnership Law</h2>
+                <ul class="resource-list">
+                    <li><a href="https://www.sec.gov" target="_blank">SEC - Corporate Governance & Regulations</a></li>
+                    <li><a href="https://www.legislation.gov.uk/browse/business" target="_blank">UK Business & Corporate Legislation</a></li>
+                    <li><a href="https://www.americanbar.org" target="_blank">American Bar Association Resources</a></li>
+                    <li><a href="https://www.iclg.com" target="_blank">International Comparative Legal Guides</a></li>
+                    <li><a href="https://www.lexisnexis.com" target="_blank">LexisNexis Legal Research Platform</a></li>
+                </ul>
+            </div>
+
+            <div class="resource-category">
+                <h2>💰 Cost Accounting</h2>
+                <ul class="resource-list">
+                    <li><a href="https://www.imanet.org" target="_blank">IMA - Institute of Management Accountants</a></li>
+                    <li><a href="https://www.accountingcoach.com/cost-accounting/explanation" target="_blank">Accounting Coach - Cost Accounting</a></li>
+                    <li><a href="https://www.cpajournal.com" target="_blank">CPA Journal Resources & Articles</a></li>
+                    <li><a href="https://www.cimaglobal.com" target="_blank">CIMA - Chartered Institute of Management Accountants</a></li>
+                    <li><a href="https://www.journalofaccountancy.com" target="_blank">Journal of Accountancy</a></li>
+                </ul>
+            </div>
+
+            <div class="resource-category">
+                <h2>🔍 Audit and Internal Review</h2>
+                <ul class="resource-list">
+                    <li><a href="https://www.theiia.org" target="_blank">IIA - Institute of Internal Auditors</a></li>
+                    <li><a href="https://www.aicpa.org/research/standards/auditattest.html" target="_blank">AICPA Auditing Standards & Guidance</a></li>
+                    <li><a href="https://pcaobus.org" target="_blank">PCAOB - Public Company Accounting Oversight</a></li>
+                    <li><a href="https://www.iaasb.org" target="_blank">IAASB - International Auditing Standards</a></li>
+                    <li><a href="https://www.isaca.org" target="_blank">ISACA - IT Audit & Governance</a></li>
+                </ul>
+            </div>
+
+            <div class="resource-category">
+                <h2>📚 General Accounting & Learning Resources</h2>
+                <ul class="resource-list">
+                    <li><a href="https://www.coursera.org/browse/business/finance" target="_blank">Coursera - Finance & Accounting Courses</a></li>
+                    <li><a href="https://www.edx.org/learn/accounting" target="_blank">edX - Accounting Certificate Programs</a></li>
+                    <li><a href="https://www.accountingtoday.com" target="_blank">Accounting Today - Industry News</a></li>
+                    <li><a href="https://www.youtube.com/results?search_query=accounting+tutorials" target="_blank">YouTube - Accounting Video Tutorials</a></li>
+                    <li><a href="https://www.reddit.com/r/Accounting/" target="_blank">Reddit - Accounting Community Discussion</a></li>
                 </ul>
             </div>
         </div>
@@ -83,7 +177,7 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Quiz</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="resources.html">Resources</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -93,10 +187,11 @@
                 <h4>Contact</h4>
                 <p>Email: lotsuibrahim2@gmail.com</p>
                 <p>Phone: +233 54 482 3484</p>
+                <p>Location: Accra, Ghana</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 IbraCheck. All Rights Reserved.</p>
+            <p>&copy; 2025 IbraCheck. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -119,6 +214,10 @@
 
     <script src="chatbot.js"></script>
     <script>
+        window.addEventListener('load', () => {
+            document.getElementById('pageLoader').classList.add('hidden');
+        });
+
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         const overlay = document.getElementById('overlay');
